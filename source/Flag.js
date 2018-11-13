@@ -55,12 +55,8 @@ class Flag {
 	 */
 	getUnicode() {
 		const { iso } = storage.get(this);
-		const range = [...Array(26)].map((_, index) =>
-			String.fromCharCode(65 + index)
-		);
-		const offset = 0x1f1e6;
 
-		return iso.split('').map((char) => offset + range.indexOf(char));
+		return iso.split('').map((char) => 0x1f1e6 + (char.charCodeAt(0) - 65));
 	}
 
 	/**
