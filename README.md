@@ -1,42 +1,21 @@
-# Project template
+# ISO Flags
 
-Basic Node.js project template, helps to set up the basics real quick.
-
+The Unicode Consortium has made it possible to convert the two letter region codes (defined in ISO-3166, alpha2) into their flag representation, this library does this for you in JavaScript.
 
 ## Installation
 
 ```
-$ npx degit konfirm/node-template <project>
-
-$ cd <project>
-
-$ make bootstrap
+$ npm install @konfirm/isoflag
 ```
 
-The `make bootstrap` command will take care of replacing the `PROJECT_NAME` and `PROJECT_YEAR` placeholders in all files as well as initialize a git repo and making the first commit.
+## Usage
 
-## Structure
+```
+const Flag = require('@konfirm/isoflag');
 
-### Dependencies
-All dependencies are development only:
- - [`@konfirm/labrat`](https://www.npmjs.com/package/@konfirm/labrat) - BDD syntax exposure of [Hapi's Lab](https://github.com/hapijs/lab) test framework
- - [`eslint-config-strict`](https://www.npmjs.com/package/eslint-config-strict)
-
-### Folders
-The folder structure is simple:
-
- - /source - The folder where the actual module source code resides
- - /test - The starting point of all unit tests
- - /test/index.spec.js - Bootstrap of the `@konfirm/labrat` package, preparing all basics for [Hapi's Lab](https://github.com/hapijs/lab) test framework.
- - /test/source/* - sources to test, allows for using the same structure as the actual source folder
-
-## Configuration
-The configuration is both basic and opiniated
- - `.editorconfig` - uses tabs (except for package.json)
- - `.eslintrc.json` - some additional restrictions and relaxing settings for eslint-config-strict
- - `.npmignore` - Ignores the test folder and configuration files from being published
- - `.gitignore` - Ignores the node_modules folder
-
+nl1 = Flag.factory('NL');
+nl2 = new Flag('NL');
+```
 
 ## License
 
