@@ -1,6 +1,3 @@
-project_name := $(notdir $(shell pwd))
-project_year := $(shell date +%Y)
-
 lab := node_modules/.bin/lab
 
 .PHONY: clean test outdated
@@ -30,15 +27,15 @@ push:
 
 release-patch: test best-practise outdated
 	@npm version patch
-	@{MAKE} push
+	@make push
 
 release-feature: test best-practise outdated
 	@npm version minor
-	@{MAKE} push
+	@make push
 
 release-breaking: test best-practise outdated
 	@npm version major
-	@{MAKE} push
+	@make push
 
 publish:
 	@npm publish --access public
