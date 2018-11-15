@@ -14,7 +14,17 @@
   "bugs": {
     "url": "https://github.com/konfirm/node-isoflag/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "iso",
+    "iso3166",
+    "iso-3166",
+    "3166",
+    "flag",
+    "country",
+    "region",
+    "territory",
+    "unicode"
+  ],
   "author": "Rogier Spieker <rogier@konfirm.eu>",
   "license": "MIT",
   "devDependencies": {

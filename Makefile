@@ -3,26 +3,10 @@ project_year := $(shell date +%Y)
 
 lab := node_modules/.bin/lab
 
-.PHONY: clean test outdated best-practise rename-placeholder
+.PHONY: clean test outdated
 
 all:
 	${MAKE} clean test
-
-rename-placeholder/%: %
-	@sed -i '' -e 's/%PROJECT_NAME%/${project_name}/g; s/%PROJECT_YEAR%/${project_year}/g' $<
-
-bootstrap: \
-	rename-placeholder/README.md \
-	rename-placeholder/LICENSE \
-	rename-placeholder/package.json \
-	rename-placeholder/source/main.js \
-	rename-placeholder/test/source/main.js \
-	package-lock.json
-	@git init
-	@git add source test
-	@find . -iname '[^\.]*' -type f -maxdepth 1 -exec git add '{}' ';'
-	@find . -iname '.[^\.]*' -type f -maxdepth 1 -exec git add '{}' ';'
-	@git commit -m "Bootstrap"
 
 best-practise: LICENSE README.md
 
