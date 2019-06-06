@@ -1,6 +1,6 @@
 {
   "name": "@konfirm/isoflag",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Describe the purpose of the project",
   "main": "source/main.js",
   "scripts": {
