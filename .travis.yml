@@ -1,22 +1,24 @@
 language: node_js
+os: linux
+dist: xenial
 node_js:
-    - '7'
-    - '8'
-    - '9'
-    - '10'
-    - '11'
-    - '12'
-
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
 jobs:
-    include:
-        - stage: npm release
-          if: tag IS present
-          node_js: 12
-          deploy:
-              provider: npm
-              email: rogier+npm@konfirm.eu
-              on:
-                  branch: master
-                  tags: true
-              api_key:
-                  secure: FGzO2Kw6Xg48ZlCwg1+ftvDRUQq6Ducauiy+GCvZK/V3Mo4x8DMjXo2ElGV976SDHECACT1OvYjtjdAiAdoseVwAVwzTI5uiSiT5JH7JcNJOIrqLbcy9CJvsQ3aBO2fXpdXW2jtHCWGGKfGYKfHNyeluoPEQyY7BCuoQFhDl1pVdgxkMMyE8woL4Xgl6/OVrhPtSBFmAIeMmo5/bIq5jzeatTc0AB8Uf0wW9qSFniiCZlLPjbYKHNYQci54eyWk4HaUbVlv4Fj82zy+3KnnZzj4X4kFDWX1/1gaGgP7MwqP9FxZI/DOoZxDGKEF4TM7Clxr6IH47/MTdQD40M1UJ7Qsb33OJx9EnQRt8DJgI3NR/QWg+r/QjltoDRqZ24NEygJDBDkDiXc7gjZqCnEyGwfWZUhEA3ZXMsRyoLJNpu27CykAaJXsu5oUEQJWwQsH9+bKftBXJg3rgsvk4wZIcMu9UzPzhafKIj2PfsN7HT1yXcdQvWNGLwlkgyzAs7llXPF4p/cravY551nT/vLeJCsrHzXU3S7W1ubXKNY96RNBPg+wwJPtwdL4nsen+5Q9Lz+P8PrbKCW/bLONFhjqnmGw/Xq81+dy+Eyguk47OsE4xQH+Hao6YeSPn1h+hC+PQyzLp2RvwwcmGf/ejap5Pxr/1wpGl+MMjG4zqFyDr+Y0=
+  include:
+    - stage: npm release
+      if: tag IS present
+      node_js: 14
+      deploy:
+        provider: npm
+        email: rogier+npm@konfirm.eu
+        on:
+          branch: master
+          tags: true
+        api_key:
+          secure: bXfwTp0tv5s5OKforPAKWvZPXWv/ho24txYT64SsreKyCk1ljZ2SO7QqPY7dSzLRZ/uun6yk6UQKHRTe9hU/jF2FxRABsOLUZsPtQGPlbR7DAuGFpvvXe68DG9K4heZKyzVhaQFA1uwXWjism0bmEZbS9sKFxiiI+NhHVgx6R8O8Ver/Ds4YyZjeDF+KZz7UcbtsmP4BVGAMjS+V7D5PcWEwI6YI/h/cSRa6OV3APafR0lXnHCB2Lp7aWGuz9UnW+3wVYckqxh6+SrqOPHaCWEn5SGskI292RITC+ca21dK6G/9hrIfEV2TKZFqVGiZ2CsJn0mM5hzn7MHNxiu30rwKf8dYRQfyT0sarYyqeFpNM4x25NKn73Gu6AUc7RDhlYmCd7+EkAAuV8tkXmrARrFYImv2IXRR5WDzM5W6QNeyh/RYPGstCPmW+fqv2jT+89YYqcY814A2xnBHl5mOgQj1xEaBzZ7oJEc2OD1PcK3ThUe+iy+j+OuSjL4PptG9sxZWg5vxUa0jcWkaO9UXo5MPkENXeypUTBmXoIUY68Fc3a1dIX+QMwjMVmHoJegHEYqXDu6sUdx7QA6bSbUckfDEig9HNqUpOE9yoycFAHYgMoTfO+r2RfQrxVh86/S0/pDbHqW9O9HbhuUECuEbb5vJGY3+n/VkBTGBSKoesLPI=
